@@ -1,0 +1,1255 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root {
+    /* Pastel Candy — Core Palette */
+    --primary: #3A2747;
+    --secondary: #9E82B5;
+    --tertiary: #FF8AB8;
+    --neutral: #FFF3F7;
+    --surface: #FFFFFF;
+    --on-primary: #FFFFFF;
+
+    /* Derived Tokens */
+    --text-main: #3A2747;
+    --text-muted: #9E82B5;
+    --tertiary-hover: #f5749f;
+    --tertiary-glow: rgba(255, 138, 184, 0.3);
+    --card-border: rgba(158, 130, 181, 0.15);
+    --card-border-focus: rgba(255, 138, 184, 0.4);
+    --success: #34d399;
+
+    /* Rounded */
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 32px;
+
+    /* Shadows (soft, diffuse, premium) */
+    --shadow-soft: 0 8px 30px rgba(58, 39, 71, 0.06);
+    --shadow-hover: 0 16px 48px rgba(58, 39, 71, 0.10);
+    --shadow-card: 0 2px 12px rgba(58, 39, 71, 0.04);
+
+    /* Transition */
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: var(--neutral);
+    color: var(--text-main);
+    padding-top: 100px;
+    overflow-x: hidden;
+}
+
+/* ========================================
+   1. HEADER & NAVIGATION (Floating Pill)
+   ======================================== */
+header {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    position: fixed;
+    top: 16px;
+    left: 5%;
+    right: 5%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 36px;
+    z-index: 1000;
+    border-radius: 32px;
+    border: 1px solid var(--card-border);
+    box-shadow: 0 4px 24px rgba(58, 39, 71, 0.06);
+}
+
+.logo-text {
+    font-family: 'Fraunces', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    letter-spacing: -0.01em;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    letter-spacing: 0.04em;
+    position: relative;
+    padding: 6px 0;
+    transition: var(--transition);
+}
+
+header nav a:hover,
+header nav a.active {
+    color: var(--primary);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--tertiary);
+    transition: var(--transition);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+header nav a:hover::after,
+header nav a.active::after {
+    width: 100%;
+}
+
+.logout-link {
+    color: var(--tertiary) !important;
+}
+
+/* ========================================
+   2. CONTAINER & SECTION HEADERS
+   ======================================== */
+main {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+.section-header {
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+}
+
+.section-header h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.section-header p {
+    color: var(--secondary);
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Accent line under section headings */
+.section-header::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: var(--tertiary);
+    margin: 20px auto 0;
+    border-radius: 2px;
+}
+
+/* ========================================
+   3. HERO / INFO + CART GRID
+   ======================================== */
+.hero-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1.1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.restaurant-info-card,
+.shopping-cart-component {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--card-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.featured-badge {
+    background: rgba(255, 138, 184, 0.12);
+    color: var(--tertiary);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: inline-block;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 138, 184, 0.2);
+}
+
+.restaurant-info-card h1 {
+    font-family: 'Fraunces', serif;
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 12px;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.cuisine-type {
+    color: var(--secondary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.rating-container {
+    margin-bottom: 28px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rating-stars {
+    color: #f0a500;
+    letter-spacing: 2px;
+}
+
+.rating-number {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.review-count {
+    color: var(--secondary);
+}
+
+.details-list {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+.details-list p {
+    font-size: 0.95rem;
+    color: var(--secondary);
+    border-left: 3px solid var(--tertiary);
+    padding-left: 14px;
+}
+
+.details-list strong {
+    color: var(--primary);
+}
+
+.restaurant-description {
+    color: var(--secondary);
+    font-size: 0.98rem;
+    line-height: 1.7;
+    border-top: 1px solid var(--card-border);
+    padding-top: 24px;
+}
+
+/* ========================================
+   4. SHOPPING CART — :target TOGGLE
+   ======================================== */
+.shopping-cart-section {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto 100px;
+    padding: 0 20px;
+}
+
+.shopping-cart-section:target {
+    display: block;
+    animation: slideUpFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Center the bottom featured restaurant card */
+.restaurant-details-section .restaurant-info-card {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Shopping Cart Component */
+.shopping-cart-component h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.cart-items-count {
+    color: var(--secondary);
+    font-size: 0.88rem;
+    margin-bottom: 30px;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.cart-table th {
+    padding: 14px 10px;
+    text-align: left;
+    border-bottom: 2px solid var(--card-border);
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    font-weight: 700;
+}
+
+.cart-table td {
+    padding: 16px 10px;
+    border-bottom: 1px solid rgba(158, 130, 181, 0.08);
+    color: var(--primary);
+}
+
+.item-customization {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--secondary);
+    margin-top: 4px;
+}
+
+.summary-row td {
+    border-bottom: none;
+    padding: 8px 10px;
+    color: var(--secondary);
+}
+
+.discount-row td {
+    color: var(--success);
+}
+
+.summary-row.total-row td {
+    border-top: 2px solid var(--card-border);
+    font-size: 1.15rem;
+    padding-top: 18px;
+    color: var(--primary);
+}
+
+.cart-actions {
+    display: flex;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+.cart-actions .btn {
+    flex: 1;
+}
+
+@media (max-width: 600px) {
+    .cart-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+/* ========================================
+   5. BUTTONS
+   ======================================== */
+.btn {
+    display: inline-block;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 12px 20px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+}
+
+.btn-primary {
+    background: var(--tertiary);
+    color: var(--on-primary);
+    box-shadow: 0 4px 16px rgba(255, 138, 184, 0.25);
+}
+
+.btn-primary:hover {
+    background: var(--tertiary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 138, 184, 0.35);
+}
+
+.btn-secondary {
+    background: var(--neutral);
+    color: var(--primary);
+    border: 1px solid var(--card-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(158, 130, 181, 0.08);
+    border-color: var(--secondary);
+}
+
+/* ========================================
+   6. FOOD & RESTAURANT CARD GRIDS
+   ======================================== */
+.food-grid,
+.restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.food-card,
+.restaurant-card {
+    background: var(--surface);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--card-border);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.food-card:hover,
+.restaurant-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--card-border-focus);
+    box-shadow: var(--shadow-hover);
+}
+
+.food-image-wrapper,
+.restaurant-image-wrapper {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: var(--neutral);
+}
+
+.food-image,
+.restaurant-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.food-card:hover .food-image,
+.restaurant-card:hover .restaurant-image {
+    transform: scale(1.05);
+}
+
+.food-details,
+.restaurant-details {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.food-category,
+.restaurant-cuisine {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--tertiary);
+    letter-spacing: 0.04em;
+    margin-bottom: 10px;
+}
+
+.food-title,
+.restaurant-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+    letter-spacing: -0.01em;
+}
+
+.food-description,
+.restaurant-description {
+    font-size: 0.92rem;
+    color: var(--secondary);
+    margin-bottom: 24px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+/* Reset border/margin in cards */
+.restaurant-card .restaurant-description {
+    border: none;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+.food-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    border-top: 1px solid var(--card-border);
+    padding-top: 20px;
+}
+
+.food-price {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.add-to-cart-btn,
+.view-menu-btn {
+    padding: 10px 22px;
+    font-size: 0.85rem;
+    width: auto;
+    background: var(--tertiary);
+    color: var(--on-primary);
+    border-radius: var(--radius-sm);
+    box-shadow: 0 3px 10px rgba(255, 138, 184, 0.2);
+}
+
+.add-to-cart-btn:hover,
+.view-menu-btn:hover {
+    background: var(--tertiary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 138, 184, 0.3);
+}
+
+.restaurant-meta-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.82rem;
+    color: var(--secondary);
+    border-top: 1px solid var(--card-border);
+    padding-top: 18px;
+    margin-bottom: 20px;
+}
+
+.restaurant-rating {
+    color: #f0a500;
+    font-weight: 700;
+}
+
+.restaurant-footer {
+    margin-top: auto;
+}
+
+.restaurant-footer .view-menu-btn {
+    width: 100%;
+}
+
+/* ========================================
+   7. DIET BADGES (VEG / NON-VEG)
+   ======================================== */
+.diet-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    z-index: 2;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.veg-badge {
+    background: rgba(22, 163, 74, 0.15);
+    color: #16a34a;
+    border: 1px solid rgba(22, 163, 74, 0.25);
+}
+
+.nonveg-badge {
+    background: rgba(220, 38, 38, 0.15);
+    color: #dc2626;
+    border: 1px solid rgba(220, 38, 38, 0.25);
+}
+
+/* Section heading color accents for veg/non-veg */
+.veg-section .section-header h2 {
+    color: #16a34a;
+}
+
+.veg-section .section-header::after {
+    background: #16a34a;
+}
+
+.nonveg-section .section-header h2 {
+    color: #dc2626;
+}
+
+.nonveg-section .section-header::after {
+    background: #dc2626;
+}
+
+/* Card hover accents */
+.veg-card:hover {
+    border-color: rgba(22, 163, 74, 0.25);
+    box-shadow: 0 16px 48px rgba(22, 163, 74, 0.08);
+}
+
+.nonveg-card:hover {
+    border-color: rgba(220, 38, 38, 0.2);
+    box-shadow: 0 16px 48px rgba(220, 38, 38, 0.08);
+}
+
+/* ========================================
+   8. FAVORITES SECTION
+   ======================================== */
+.favorites-section {
+    background: rgba(255, 138, 184, 0.04);
+    border: 1px dashed rgba(255, 138, 184, 0.2);
+    border-radius: var(--radius-lg);
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.no-favorites-message {
+    color: var(--secondary);
+    max-width: 500px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+/* ========================================
+   9. CONTACT FORM
+   ======================================== */
+.contact-form-container {
+    max-width: 640px;
+    margin: 0 auto;
+    background: var(--surface);
+    padding: 48px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--card-border);
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--primary);
+    letter-spacing: 0.02em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    background: var(--neutral);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-sm);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    color: var(--primary);
+    transition: var(--transition);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--secondary);
+    opacity: 0.6;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--tertiary);
+    background: var(--surface);
+    box-shadow: 0 0 0 4px var(--tertiary-glow);
+}
+
+.btn-submit {
+    background: var(--tertiary);
+    color: var(--on-primary);
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+    box-shadow: 0 4px 16px rgba(255, 138, 184, 0.25);
+}
+
+.btn-submit:hover {
+    background: var(--tertiary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 138, 184, 0.35);
+}
+
+/* ========================================
+   10. FOOTER
+   ======================================== */
+footer {
+    background-color: var(--primary);
+    color: var(--on-primary);
+    padding: 80px 5% 40px;
+    font-size: 0.92rem;
+    border-top: none;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    padding-bottom: 50px;
+}
+
+.footer-info h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    margin-bottom: 14px;
+    font-size: 1.5rem;
+    color: var(--on-primary);
+    letter-spacing: -0.01em;
+}
+
+.footer-info p {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-info address {
+    font-style: normal;
+    margin-top: 16px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.footer-info a {
+    color: var(--on-primary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-info a:hover {
+    color: var(--tertiary);
+}
+
+.social-header {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon-link {
+    color: rgba(255, 255, 255, 0.6);
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-icon-link svg {
+    width: 20px;
+    height: 20px;
+    transition: var(--transition);
+}
+
+.social-icon-link:hover {
+    color: var(--on-primary);
+    background: var(--tertiary);
+    border-color: transparent;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(255, 138, 184, 0.35);
+}
+
+.footer-bottom {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+}
+
+/* ========================================
+   11. RESPONSIVE
+   ======================================== */
+@media (max-width: 992px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-radius: 0;
+        border-width: 0 0 1px 0;
+        height: auto;
+        padding: 18px 20px;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    header nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    body {
+        padding-top: 0;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .restaurant-info-card h1 {
+        font-size: 2rem;
+    }
+
+    .contact-form-container {
+        padding: 28px;
+    }
+}
+
+/* ========================================
+   12. LANDING PAGE
+   ======================================== */
+.landing-body {
+    padding-top: 0;
+    background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.landing-background-overlay {
+    background: rgba(255, 243, 247, 0.88);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 5%;
+}
+
+.header-actions .nav-login-btn {
+    background: var(--tertiary);
+    color: var(--on-primary);
+    padding: 10px 28px;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 0.88rem;
+    width: auto;
+    box-shadow: 0 4px 14px rgba(255, 138, 184, 0.25);
+    transition: var(--transition);
+}
+
+.header-actions .nav-login-btn:hover {
+    background: var(--tertiary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(255, 138, 184, 0.35);
+}
+
+.landing-main {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    padding: 40px 5%;
+    max-width: 1240px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.landing-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 60px;
+    width: 100%;
+    align-items: center;
+}
+
+.welcome-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.welcome-badge {
+    background: rgba(158, 130, 181, 0.1);
+    color: var(--secondary);
+    border: 1px solid rgba(158, 130, 181, 0.2);
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: inline-block;
+    margin-bottom: 24px;
+    width: fit-content;
+}
+
+.landing-title {
+    font-family: 'Fraunces', serif;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.08;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+    color: var(--primary);
+}
+
+.landing-subtitle {
+    font-size: 1.1rem;
+    color: var(--secondary);
+    line-height: 1.6;
+    margin-bottom: 45px;
+    max-width: 520px;
+}
+
+.landing-food-gallery {
+    border-top: 1px solid rgba(158, 130, 181, 0.12);
+    padding-top: 30px;
+}
+
+.gallery-header {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--secondary);
+    letter-spacing: 0.04em;
+    margin-bottom: 20px;
+}
+
+.food-gallery-grid {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--surface);
+    box-shadow: var(--shadow-card);
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    border-color: var(--tertiary);
+    box-shadow: 0 6px 20px rgba(255, 138, 184, 0.2);
+}
+
+.gallery-item span {
+    font-size: 0.82rem;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+/* ========================================
+   13. GLASSMORPHIC LOGIN CARD
+   ======================================== */
+.login-column {
+    display: flex;
+    align-items: center;
+}
+
+.glass-login-card {
+    background: var(--surface);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 48px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(58, 39, 71, 0.08);
+    position: relative;
+}
+
+.glass-login-card h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+}
+
+.card-desc {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    margin-bottom: 35px;
+}
+
+.login-form .form-group input {
+    background: var(--neutral);
+    border: 1px solid var(--card-border);
+    color: var(--primary);
+}
+
+.login-form .form-group input::placeholder {
+    color: var(--secondary);
+    opacity: 0.5;
+}
+
+.login-form .form-group input:focus {
+    border-color: var(--tertiary);
+    background: var(--surface);
+    box-shadow: 0 0 0 4px var(--tertiary-glow);
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    margin-bottom: 24px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--secondary);
+    cursor: pointer;
+    user-select: none;
+}
+
+.remember-me input {
+    width: auto;
+    accent-color: var(--tertiary);
+}
+
+.forgot-password {
+    color: var(--tertiary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.forgot-password:hover {
+    color: var(--tertiary-hover);
+    text-decoration: underline;
+}
+
+.btn-login-submit {
+    background: var(--tertiary);
+    color: var(--on-primary);
+    font-size: 1.05rem;
+    padding: 16px 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(255, 138, 184, 0.25);
+}
+
+.btn-login-submit:hover {
+    background: var(--tertiary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 138, 184, 0.35);
+}
+
+.login-divider {
+    text-align: center;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.login-divider::before,
+.login-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 32%;
+    height: 1px;
+    background: var(--card-border);
+}
+
+.login-divider::before {
+    left: 0;
+}
+
+.login-divider::after {
+    right: 0;
+}
+
+.login-divider span {
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.75rem;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+}
+
+.social-login-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-social {
+    background: var(--neutral);
+    border: 1px solid var(--card-border);
+    color: var(--primary);
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-social:hover {
+    background: rgba(158, 130, 181, 0.08);
+    border-color: var(--secondary);
+}
+
+/* ========================================
+   14. LANDING FOOTER
+   ======================================== */
+.landing-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 5%;
+    font-size: 0.8rem;
+    color: var(--secondary);
+    border-top: 1px solid rgba(158, 130, 181, 0.1);
+}
+
+.landing-footer-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.landing-footer-links a:hover {
+    color: var(--tertiary);
+}
+
+/* ========================================
+   15. RESPONSIVE — LANDING
+   ======================================== */
+@media (max-width: 992px) {
+    .landing-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .welcome-badge {
+        margin: 0 auto 20px;
+    }
+
+    .landing-title {
+        font-size: 2.8rem;
+    }
+
+    .landing-subtitle {
+        margin: 0 auto 35px;
+    }
+
+    .food-gallery-grid {
+        justify-content: center;
+    }
+
+    .glass-login-card {
+        margin: 0 auto;
+    }
+
+    .landing-footer {
+        flex-direction: column;
+        gap: 15px;
+        padding: 30px 20px;
+    }
+
+    .landing-footer-links a {
+        margin: 0 12px;
+    }
+}

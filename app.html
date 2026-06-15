@@ -1,0 +1,976 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="CraveCraft - Premium food delivery from the best local restaurants. Order your favorite dishes now."
+    />
+    <title>CraveCraft - Premium Food Delivery</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- NAVIGATION SECTION -->
+    <header>
+      <div class="logo-container">
+        <span class="logo-text">CraveCraft</span>
+      </div>
+      <nav id="main-navigation">
+        <ul>
+          <li class="listitem">
+            <a href="#best-sellers" class="nav-link active">Home</a>
+          </li>
+          <li class="listitem">
+            <a href="#top-restaurants" class="nav-link">Restaurants</a>
+          </li>
+          <li class="listitem">
+            <a href="#veg-menu" class="nav-link">Veg Menu</a>
+          </li>
+          <li class="listitem">
+            <a href="#nonveg-menu" class="nav-link">Non-Veg</a>
+          </li>
+          <li class="listitem">
+            <a href="#featured-restaurant" class="nav-link">About</a>
+          </li>
+          <li class="listitem">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="listitem">
+            <a href="index.html" class="nav-link logout-link">Logout</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- 1. FOOD ITEMS SECTION (Shows first after login) -->
+      <section id="best-sellers" class="food-section">
+        <div class="section-header">
+          <h2>Our Best Sellers & Recommended Dishes</h2>
+          <p>Popular choices ordered by our customers this week</p>
+        </div>
+
+        <div class="food-grid">
+          <!-- Food Item 1 -->
+          <article class="food-card" data-category="pizza">
+            <div class="food-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80"
+                alt="Wood-Fired Margherita Pizza"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Pizza</span>
+              <h3 class="food-title">Wood-Fired Margherita Pizza</h3>
+              <p class="food-description">
+                Classic Neapolitan sourdough base topped with rich San Marzano
+                tomato sauce, fresh buffalo mozzarella, aromatic sweet basil
+                leaves, and a generous drizzle of premium extra virgin olive
+                oil.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$14.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Food Item 2 -->
+          <article class="food-card" data-category="pasta">
+            <div class="food-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1645112411341-6c4fd023714a?auto=format&fit=crop&w=600&q=80"
+                alt="Creamy Fettuccine Alfredo"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Pasta</span>
+              <h3 class="food-title">Creamy Fettuccine Alfredo</h3>
+              <p class="food-description">
+                Handcrafted fettuccine pasta tossed in a rich, velvety sauce
+                made with fresh heavy cream, melted Parmigiano-Reggiano cheese,
+                minced garlic, and butter, topped with succulent sliced grilled
+                chicken breast.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$16.50</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Food Item 3 -->
+          <article class="food-card" data-category="burger">
+            <div class="food-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=600&q=80"
+                alt="Classic Gourmet Beef Burger"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Burgers</span>
+              <h3 class="food-title">Classic Gourmet Beef Burger</h3>
+              <p class="food-description">
+                Flame-grilled angus beef patty nestled in a toasted artisanal
+                brioche bun, layered with sharp cheddar cheese, crispy
+                butterhead lettuce, vine-ripened tomatoes, sweet caramelized
+                onions, and house secret burger sauce.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$13.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Food Item 4 -->
+          <article class="food-card" data-category="salad">
+            <div class="food-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80"
+                alt="Fresh Avocado Green Salad"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Salads</span>
+              <h3 class="food-title">Fresh Avocado Green Salad</h3>
+              <p class="food-description">
+                Crispy baby spinach and mixed field greens tossed with ripe Haas
+                avocado slices, English cucumbers, cherry tomatoes, Kalamata
+                olives, toasted pine nuts, crumbled feta cheese, and a light
+                lemon-herb vinaigrette.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$11.25</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Food Item 5 -->
+          <article class="food-card" data-category="dessert">
+            <div class="food-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80"
+                alt="Classic Italian Tiramisu"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Dessert</span>
+              <h3 class="food-title">Tiramisu Classico</h3>
+              <p class="food-description">
+                Indulgent layers of espresso-soaked ladyfinger biscuits and
+                airy, whipped mascarpone cheese custard cream, dusted with
+                premium dark cocoa powder and garnished with fresh chocolate
+                curls.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$7.25</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Food Item 6 -->
+          <article class="food-card" data-category="dessert">
+            <div class="food-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=600&q=80"
+                alt="Warm Chocolate Soufflé"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Dessert</span>
+              <h3 class="food-title">Warm Chocolate Soufflé</h3>
+              <p class="food-description">
+                A delicate, light chocolate cake with a warm, liquid Belgian
+                chocolate center that flows gracefully upon first bite. Served
+                with a side of Madagascar vanilla bean gelato scoop.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$8.50</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2. TOP RESTAURANTS SECTION -->
+      <section id="top-restaurants" class="restaurants-section">
+        <div class="section-header">
+          <h2>Top Rated Restaurants Nearby</h2>
+          <p>
+            Highly rated culinary spots delivering hot meals directly to your
+            doorstep
+          </p>
+        </div>
+
+        <div class="restaurants-grid">
+          <!-- Restaurant 1 -->
+          <article class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80"
+                alt="Sushi Zen Lounge"
+                class="restaurant-image"
+              />
+            </div>
+            <div class="restaurant-details">
+              <span class="restaurant-cuisine">Japanese &bull; Sushi</span>
+              <h3 class="restaurant-title">Sushi Zen Lounge</h3>
+              <p class="restaurant-description">
+                Experience traditional and contemporary Japanese sushi rolls,
+                fresh sashimi platters, and authentic hot ramen bowls prepared
+                with daily fresh-catch ingredients by our master chefs.
+              </p>
+              <div class="restaurant-meta-info">
+                <span class="restaurant-rating">★ 4.9 (500+ orders)</span>
+                <span class="delivery-time">15 - 25 min</span>
+                <span class="min-order">Min: $20.00</span>
+              </div>
+              <div class="restaurant-footer">
+                <button type="button" class="btn view-menu-btn">
+                  View Menu
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Restaurant 2 -->
+          <article class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=600&q=80"
+                alt="The Taco Cantina"
+                class="restaurant-image"
+              />
+            </div>
+            <div class="restaurant-details">
+              <span class="restaurant-cuisine">Mexican &bull; Street Food</span>
+              <h3 class="restaurant-title">The Taco Cantina</h3>
+              <p class="restaurant-description">
+                Indulge in vibrant street-style tacos, folded cheese
+                quesadillas, homemade spicy salsas, and creamy, freshly prepared
+                guacamole flavored with authentic traditional Mexican spices.
+              </p>
+              <div class="restaurant-meta-info">
+                <span class="restaurant-rating">★ 4.7 (850+ orders)</span>
+                <span class="delivery-time">20 - 30 min</span>
+                <span class="min-order">Min: $12.00</span>
+              </div>
+              <div class="restaurant-footer">
+                <button type="button" class="btn view-menu-btn">
+                  View Menu
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Restaurant 3 -->
+          <article class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=600&q=80"
+                alt="Wok & Roll Express"
+                class="restaurant-image"
+              />
+            </div>
+            <div class="restaurant-details">
+              <span class="restaurant-cuisine"
+                >Asian &bull; Noodles &bull; Stir-fry</span
+              >
+              <h3 class="restaurant-title">Wok &amp; Roll Express</h3>
+              <p class="restaurant-description">
+                A fast-paced kitchen serving delicious pan-Asian stir-fry boxes,
+                hearty pad thai, steamed pork dumplings, and crispy spring rolls
+                cooked fresh to order in traditional Chinese woks.
+              </p>
+              <div class="restaurant-meta-info">
+                <span class="restaurant-rating">★ 4.5 (1,100+ orders)</span>
+                <span class="delivery-time">25 - 35 min</span>
+                <span class="min-order">Min: $15.00</span>
+              </div>
+              <div class="restaurant-footer">
+                <button type="button" class="btn view-menu-btn">
+                  View Menu
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Restaurant 4 -->
+          <article class="restaurant-card">
+            <div class="restaurant-image-wrapper">
+              <img
+                src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=600&q=80"
+                alt="Burger & Co."
+                class="restaurant-image"
+              />
+            </div>
+            <div class="restaurant-details">
+              <span class="restaurant-cuisine">American &bull; Burgers</span>
+              <h3 class="restaurant-title">Burger &amp; Co.</h3>
+              <p class="restaurant-description">
+                Enjoy gourmet burgers made from 100% grass-fed Angus beef
+                patties, nested in fresh brioche buns and topped with homemade
+                burger sauces and fresh farm veggies.
+              </p>
+              <div class="restaurant-meta-info">
+                <span class="restaurant-rating">★ 4.6 (620+ orders)</span>
+                <span class="delivery-time">15 - 30 min</span>
+                <span class="min-order">Min: $10.00</span>
+              </div>
+              <div class="restaurant-footer">
+                <button type="button" class="btn view-menu-btn">
+                  View Menu
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. VEG MENU SECTION -->
+      <section id="veg-menu" class="food-section veg-section">
+        <div class="section-header">
+          <h2>🌿 Vegetarian Delights</h2>
+          <p>Fresh, flavorful, and crafted with the finest garden ingredients</p>
+        </div>
+
+        <div class="food-grid">
+          <!-- Veg Item 1 -->
+          <article class="food-card veg-card" data-category="veg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge veg-badge">VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&w=600&q=80"
+                alt="Paneer Butter Masala"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Indian • Curry</span>
+              <h3 class="food-title">Paneer Butter Masala</h3>
+              <p class="food-description">
+                Soft cubes of fresh cottage cheese simmered in a rich, creamy
+                tomato-based sauce infused with aromatic spices, butter, and
+                a hint of fenugreek. Served with naan bread.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$12.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veg Item 2 -->
+          <article class="food-card veg-card" data-category="veg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge veg-badge">VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80"
+                alt="Masala Dosa"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">South Indian • Breakfast</span>
+              <h3 class="food-title">Crispy Masala Dosa</h3>
+              <p class="food-description">
+                Golden, paper-thin rice crepe filled with a fragrant spiced
+                potato stuffing, served alongside coconut chutney, tangy
+                sambar, and a fiery red chilli chutney.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$9.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veg Item 3 -->
+          <article class="food-card veg-card" data-category="veg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge veg-badge">VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=600&q=80"
+                alt="Margherita Pizza"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Italian • Pizza</span>
+              <h3 class="food-title">Classic Margherita Pizza</h3>
+              <p class="food-description">
+                Thin hand-stretched dough topped with San Marzano tomato
+                sauce, creamy fresh mozzarella di bufala, fragrant basil
+                leaves, and a drizzle of extra virgin olive oil.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$13.49</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veg Item 4 -->
+          <article class="food-card veg-card" data-category="veg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge veg-badge">VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80"
+                alt="Mediterranean Buddha Bowl"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Healthy • Bowl</span>
+              <h3 class="food-title">Mediterranean Buddha Bowl</h3>
+              <p class="food-description">
+                A nourishing bowl packed with quinoa, roasted chickpeas,
+                hummus, cherry tomatoes, sliced avocado, pickled red
+                onions, and a creamy tahini lemon dressing.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$11.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veg Item 5 -->
+          <article class="food-card veg-card" data-category="veg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge veg-badge">VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1569058242567-93de6f36f8e6?auto=format&fit=crop&w=600&q=80"
+                alt="Vegetable Pad Thai"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Thai • Noodles</span>
+              <h3 class="food-title">Vegetable Pad Thai</h3>
+              <p class="food-description">
+                Stir-fried rice noodles tossed with crunchy bean sprouts,
+                shredded carrots, tofu, crushed peanuts, scallions, and
+                a tangy-sweet tamarind sauce with lime.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$10.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Veg Item 6 -->
+          <article class="food-card veg-card" data-category="veg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge veg-badge">VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=600&q=80"
+                alt="Avocado Toast"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Café • Brunch</span>
+              <h3 class="food-title">Loaded Avocado Toast</h3>
+              <p class="food-description">
+                Artisan sourdough toast layered with smashed avocado,
+                poached cherry tomatoes, microgreens, toasted sesame
+                seeds, chili flakes, and a squeeze of fresh lemon.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$8.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4. NON-VEG MENU SECTION -->
+      <section id="nonveg-menu" class="food-section nonveg-section">
+        <div class="section-header">
+          <h2>🍗 Non-Vegetarian Specials</h2>
+          <p>Bold flavors, premium meats, and signature preparations</p>
+        </div>
+
+        <div class="food-grid">
+          <!-- Non-Veg Item 1 -->
+          <article class="food-card nonveg-card" data-category="nonveg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge nonveg-badge">NON-VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1603360946369-dc9bb6258143?auto=format&fit=crop&w=600&q=80"
+                alt="Butter Chicken"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Indian • Curry</span>
+              <h3 class="food-title">Butter Chicken</h3>
+              <p class="food-description">
+                Succulent tandoori chicken pieces slow-cooked in a velvety
+                tomato-cream gravy with aromatic spices, butter, and
+                cashew paste. A North Indian classic served with rice.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$15.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Non-Veg Item 2 -->
+          <article class="food-card nonveg-card" data-category="nonveg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge nonveg-badge">NON-VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?auto=format&fit=crop&w=600&q=80"
+                alt="BBQ Chicken Wings"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">American • BBQ</span>
+              <h3 class="food-title">Smoky BBQ Chicken Wings</h3>
+              <p class="food-description">
+                Crispy deep-fried chicken wings tossed in a house-made
+                smoky barbecue glaze with hints of honey, chipotle, and
+                garlic. Served with blue cheese dip and celery sticks.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$11.49</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Non-Veg Item 3 -->
+          <article class="food-card nonveg-card" data-category="nonveg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge nonveg-badge">NON-VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=600&q=80"
+                alt="Salmon Sashimi"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Japanese • Sushi</span>
+              <h3 class="food-title">Premium Salmon Sashimi</h3>
+              <p class="food-description">
+                Thinly sliced fresh Norwegian salmon served atop a bed of
+                shredded daikon radish, accompanied by wasabi, pickled
+                ginger, and premium soy sauce.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$18.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Non-Veg Item 4 -->
+          <article class="food-card nonveg-card" data-category="nonveg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge nonveg-badge">NON-VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80"
+                alt="Grilled Lamb Chops"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Mediterranean • Grill</span>
+              <h3 class="food-title">Herb-Crusted Lamb Chops</h3>
+              <p class="food-description">
+                Tender French-cut lamb chops marinated in rosemary, thyme,
+                and garlic, charcoal-grilled to perfection and served
+                with mint chimichurri and roasted baby potatoes.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$22.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Non-Veg Item 5 -->
+          <article class="food-card nonveg-card" data-category="nonveg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge nonveg-badge">NON-VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
+                alt="Pepperoni Pizza"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Italian • Pizza</span>
+              <h3 class="food-title">Spicy Pepperoni Pizza</h3>
+              <p class="food-description">
+                Hand-tossed pizza loaded with double layers of spicy
+                pepperoni, stretchy mozzarella, crushed red pepper flakes,
+                and a rich marinara base on crispy thin crust.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$16.49</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Non-Veg Item 6 -->
+          <article class="food-card nonveg-card" data-category="nonveg">
+            <div class="food-image-wrapper">
+              <span class="diet-badge nonveg-badge">NON-VEG</span>
+              <img
+                src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80"
+                alt="Grilled Steak"
+                class="food-image"
+              />
+            </div>
+            <div class="food-details">
+              <span class="food-category">Steakhouse • Grill</span>
+              <h3 class="food-title">Wagyu Ribeye Steak</h3>
+              <p class="food-description">
+                Premium A5 Wagyu ribeye steak seared to your preference,
+                topped with herb compound butter, served with truffle
+                mashed potatoes and grilled asparagus spears.
+              </p>
+              <div class="food-footer">
+                <span class="food-price">$34.99</span>
+                <a href="#cart" class="btn add-to-cart-btn">Add to Cart</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. SHOPPING CART SECTION (Targeted and revealed upon clicking "Add to Cart") -->
+      <section id="cart" class="shopping-cart-section">
+        <div class="shopping-cart-component">
+          <h2>Your Shopping Cart</h2>
+          <p class="cart-items-count">You have 3 items in your cart</p>
+
+          <table class="cart-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Wood-Fired Margherita Pizza</strong>
+                  <span class="item-customization">Extra Mozzarella, Basil</span>
+                </td>
+                <td>1</td>
+                <td>$14.99</td>
+                <td>$14.99</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Creamy Fettuccine Alfredo</strong>
+                  <span class="item-customization">With Grilled Chicken</span>
+                </td>
+                <td>2</td>
+                <td>$16.50</td>
+                <td>$33.00</td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Tiramisu Classico</strong>
+                  <span class="item-customization">Traditional recipe</span>
+                </td>
+                <td>1</td>
+                <td>$7.25</td>
+                <td>$7.25</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="summary-row">
+                <td colspan="3">Subtotal</td>
+                <td>$55.24</td>
+              </tr>
+              <tr class="summary-row discount-row">
+                <td colspan="3">Discount (10% Code: CRAVE10)</td>
+                <td>-$5.52</td>
+              </tr>
+              <tr class="summary-row">
+                <td colspan="3">Delivery Fee</td>
+                <td>$3.99</td>
+              </tr>
+              <tr class="summary-row tax-row">
+                <td colspan="3">Tax (8%)</td>
+                <td>$3.98</td>
+              </tr>
+              <tr class="summary-row total-row">
+                <td colspan="3"><strong>Grand Total</strong></td>
+                <td><strong>$57.69</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+
+          <div class="cart-actions">
+            <!-- Clicking Clear/Close Cart changes anchor hash to #, hiding the cart again -->
+            <a href="#" class="btn btn-secondary btn-close-cart">
+              Clear &amp; Close Cart
+            </a>
+            <button type="button" class="btn btn-primary">
+              Proceed to Checkout
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. FEATURED RESTAURANT INFO (Now moved to the bottom of the page) -->
+      <section id="featured-restaurant" class="restaurant-details-section">
+        <div class="section-header">
+          <h2>About The Golden Fork Bistro</h2>
+          <p>Learn more about our featured restaurant of the month</p>
+        </div>
+
+        <div class="restaurant-info-card">
+          <span class="badge featured-badge">Restaurant of the Month</span>
+          <h1>The Golden Fork Bistro</h1>
+          <p class="cuisine-type">
+            Italian &bull; Contemporary &bull; Fine Dining
+          </p>
+
+          <div class="rating-container">
+            <span class="rating-stars">★★★★★</span>
+            <span class="rating-number">4.8</span>
+            <span class="review-count">(1,250+ Reviews)</span>
+          </div>
+
+          <div class="details-list">
+            <p>
+              <strong>Address:</strong> 456 Culinary Boulevard, Foodie District,
+              Suite 101
+            </p>
+            <p>
+              <strong>Opening Hours:</strong> 10:00 AM - 11:00 PM (Everyday)
+            </p>
+            <p><strong>Estimated Delivery Time:</strong> 25 - 35 minutes</p>
+            <p><strong>Minimum Order:</strong> $15.00</p>
+          </div>
+
+          <p class="restaurant-description">
+            Experience authentic Italian cuisine crafted by award-winning chefs.
+            The Golden Fork Bistro combines traditional family recipes with
+            modern culinary techniques, delivering premium gourmet dishes
+            directly to your doorstep. From our wood-fired sourdough pizzas to
+            handmade pasta and decadent desserts, every meal is prepared with
+            fresh, locally sourced ingredients.
+          </p>
+        </div>
+      </section>
+
+      <!-- 5. CONTACT US SECTION -->
+      <section id="contact" class="contact-section">
+        <div class="section-header">
+          <h2>Contact Us / Place Special Order</h2>
+          <p>
+            Have an inquiry, bulk order request, or catering feedback? Leave a
+            message below!
+          </p>
+        </div>
+
+        <div class="contact-form-container">
+          <form action="#" method="POST" id="customer-feedback-form">
+            <div class="form-group">
+              <label for="user-name">Full Name</label>
+              <input
+                type="text"
+                id="user-name"
+                name="name"
+                required
+                placeholder="John Doe"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="user-email">Email Address</label>
+              <input
+                type="email"
+                id="user-email"
+                name="email"
+                required
+                placeholder="johndoe@example.com"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="user-phone">Phone Number</label>
+              <input
+                type="tel"
+                id="user-phone"
+                name="phone"
+                required
+                placeholder="+1 (555) 123-4567"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="user-address">Delivery / Billing Address</label>
+              <textarea
+                id="user-address"
+                name="address"
+                rows="4"
+                required
+                placeholder="123 Main Street, Apt 4B, Cityville, State 12345"
+              ></textarea>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-submit">Submit Form</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>CraveCraft Inc.</h3>
+          <p>Delivering taste to your doorstep since 2020.</p>
+          <address>
+            Contact:
+            <a href="mailto:support@cravecraft.com"
+              >support@cravecraft.com</a
+            >
+            | Tel: +1 (800) 555-FOOD
+          </address>
+        </div>
+
+        <div class="social-media-container">
+          <p class="social-header">Connect with us:</p>
+          <div class="social-icons">
+            <!-- LinkedIn Logo -->
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              aria-label="Visit CraveCraft on LinkedIn"
+              class="social-icon-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                ></path>
+                <rect x="2" y="9" width="4" height="12"></rect>
+                <circle cx="4" cy="4" r="2"></circle>
+              </svg>
+            </a>
+
+            <!-- Instagram Logo -->
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              aria-label="Visit CraveCraft on Instagram"
+              class="social-icon-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path
+                  d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                ></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+
+            <!-- Twitter Logo -->
+            <a
+              href="https://twitter.com"
+              target="_blank"
+              aria-label="Visit CraveCraft on Twitter"
+              class="social-icon-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"
+                ></path>
+              </svg>
+            </a>
+
+            <!-- YouTube Logo -->
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              aria-label="Visit CraveCraft on YouTube"
+              class="social-icon-link"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"
+                ></path>
+                <polygon
+                  points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"
+                ></polygon>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 CraveCraft. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Welcome to CraveCraft - Premium food delivery landing page. Log in to explore menus and order from top restaurants."
+    />
+    <title>Welcome to CraveCraft - Login</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="landing-body">
+    <!-- LANDING CONTAINER (Aesthetic Cafe Background & Glass Overlay) -->
+    <div class="landing-background-overlay">
+      <header class="landing-header">
+        <div class="logo-container">
+          <span class="logo-text">CraveCraft</span>
+        </div>
+        <div class="header-actions">
+          <a href="#login-card" class="btn btn-secondary nav-login-btn">Login</a>
+        </div>
+      </header>
+
+      <main class="landing-main">
+        <div class="landing-grid">
+          <!-- Welcome Column (Left) -->
+          <div class="welcome-column">
+            <span class="badge welcome-badge">Est. 2020 &bull; Fine Dining</span>
+            <h1 class="landing-title">Culinary Perfection, Delivered.</h1>
+            <p class="landing-subtitle">
+              Savor premium, chef-crafted dishes from the finest local eateries,
+              delivered directly to your doorstep in pristine style.
+            </p>
+
+            <!-- Food Items Gallery to attract people -->
+            <div class="landing-food-gallery">
+              <p class="gallery-header">Featured Culinary Delights:</p>
+              <div class="food-gallery-grid">
+                <div class="gallery-item">
+                  <img
+                    src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Neapolitan Pizza"
+                  />
+                  <span>Wood-Fired Pizza</span>
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Artisanal Sushi"
+                  />
+                  <span>Fresh Sushi</span>
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Gourmet Burger"
+                  />
+                  <span>Craft Burgers</span>
+                </div>
+                <div class="gallery-item">
+                  <img
+                    src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=150&h=150&q=80"
+                    alt="Chocolate Souffle"
+                  />
+                  <span>Fine Desserts</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Login Column (Right) -->
+          <div class="login-column" id="login-card">
+            <div class="glass-login-card">
+              <h2>Welcome Back</h2>
+              <p class="card-desc">Sign in to unlock menus and start ordering</p>
+
+              <form action="app.html" method="GET" class="login-form">
+                <div class="form-group">
+                  <label for="login-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="login-email"
+                    name="email"
+                    required
+                    placeholder="you@example.com"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="login-password">Password</label>
+                  <input
+                    type="password"
+                    id="login-password"
+                    name="password"
+                    required
+                    placeholder="Enter password"
+                  />
+                </div>
+
+                <div class="form-options">
+                  <label class="remember-me">
+                    <input type="checkbox" name="remember" />
+                    <span>Remember me</span>
+                  </label>
+                  <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-login-submit">
+                  Sign In &amp; View Menu
+                </button>
+              </form>
+
+              <div class="login-divider">
+                <span>Or connect with</span>
+              </div>
+
+              <div class="social-login-buttons">
+                <button type="button" class="btn btn-social btn-google">
+                  Google
+                </button>
+                <button type="button" class="btn btn-social btn-apple">
+                  Apple ID
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="landing-footer">
+        <p>&copy; 2026 CraveCraft. All rights reserved.</p>
+        <div class="landing-footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Support</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
