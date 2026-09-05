@@ -14,6 +14,7 @@
     <!-- NAVIGATION SECTION -->
     <header>
       <div class="logo-container">
+        <img src="./logo.png" alt="CraveCraft Logo" class="logo-img" />
         <span class="logo-text">CraveCraft</span>
       </div>
       <nav id="main-navigation">
@@ -35,6 +36,9 @@
           </li>
           <li class="listitem">
             <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="listitem">
+            <a href="orders.html" class="nav-link">My Orders</a>
           </li>
           <li class="listitem">
             <a href="index.html" class="nav-link logout-link">Logout</a>
@@ -660,87 +664,8 @@
         </div>
       </section>
 
-      <!-- 5. SHOPPING CART SECTION (Targeted and revealed upon clicking "Add to Cart") -->
-      <section id="cart" class="shopping-cart-section">
-        <div class="shopping-cart-component">
-          <h2>Your Shopping Cart</h2>
-          <p class="cart-items-count">You have 3 items in your cart</p>
-
-          <table class="cart-table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <strong>Wood-Fired Margherita Pizza</strong>
-                  <span class="item-customization"
-                    >Extra Mozzarella, Basil</span
-                  >
-                </td>
-                <td>1</td>
-                <td>$14.99</td>
-                <td>$14.99</td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>Creamy Fettuccine Alfredo</strong>
-                  <span class="item-customization">With Grilled Chicken</span>
-                </td>
-                <td>2</td>
-                <td>$16.50</td>
-                <td>$33.00</td>
-              </tr>
-              <tr>
-                <td>
-                  <strong>Tiramisu Classico</strong>
-                  <span class="item-customization">Traditional recipe</span>
-                </td>
-                <td>1</td>
-                <td>$7.25</td>
-                <td>$7.25</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr class="summary-row">
-                <td colspan="3">Subtotal</td>
-                <td>$55.24</td>
-              </tr>
-              <tr class="summary-row discount-row">
-                <td colspan="3">Discount (10% Code: CRAVE10)</td>
-                <td>-$5.52</td>
-              </tr>
-              <tr class="summary-row">
-                <td colspan="3">Delivery Fee</td>
-                <td>$3.99</td>
-              </tr>
-              <tr class="summary-row tax-row">
-                <td colspan="3">Tax (8%)</td>
-                <td>$3.98</td>
-              </tr>
-              <tr class="summary-row total-row">
-                <td colspan="3"><strong>Grand Total</strong></td>
-                <td><strong>$57.69</strong></td>
-              </tr>
-            </tfoot>
-          </table>
-
-          <div class="cart-actions">
-            <!-- Clicking Clear/Close Cart changes anchor hash to #, hiding the cart again -->
-            <a href="#" class="btn btn-secondary btn-close-cart">
-              Clear &amp; Close Cart
-            </a>
-            <button type="button" class="btn btn-primary">
-              Proceed to Checkout
-            </button>
-          </div>
-        </div>
-      </section>
+      <!-- 5. SHOPPING CART SECTION — populated dynamically by app.js -->
+      <section id="cart" class="shopping-cart-section"></section>
 
       <!-- 4. FEATURED RESTAURANT INFO (Now moved to the bottom of the page) -->
       <section id="featured-restaurant" class="restaurant-details-section">
@@ -974,5 +899,6 @@
         <p>&copy; 2026 CraveCraft. All rights reserved.</p>
       </div>
     </footer>
+    <script src="./app.js"></script>
   </body>
 </html>
